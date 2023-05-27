@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Cloud_Azure_Lab_3_part_1": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7099",
+      "launchBrowser": false
+    }
+  }
+}
