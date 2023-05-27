@@ -11,13 +11,13 @@ namespace Cloud_Azure_Lab_3_part_1.Models
         public string Id { get; set; } = Guid.NewGuid().ToString();
         public string Name { get; set; }
         public int Age { get; set; }
-        public int Division { get; set; } = 1;
+        public int Power { get; set; } = 1;
 
-        public AzureMember(string _Name, int _Age, int _Division)
+        public AzureMember(string _Name, int _Age, int _Power = 100)
         {
             Name = _Name;
             Age = _Age;
-            Division = _Division;
+            Power = _Power;
         }
     }
 }
