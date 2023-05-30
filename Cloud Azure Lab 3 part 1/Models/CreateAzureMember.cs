@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cloud_Azure_Lab_3_part_1.Models
 {
-    internal class CreateAzureMember
+    public class CreateAzureMember
     {
         public string Name { get; set; }
         public int Age { get; set; }

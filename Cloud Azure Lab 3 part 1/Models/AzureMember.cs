@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cloud_Azure_Lab_3_part_1.Models
 {
-    internal class AzureMember
+    public class AzureMember
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
         public string Name { get; set; }
