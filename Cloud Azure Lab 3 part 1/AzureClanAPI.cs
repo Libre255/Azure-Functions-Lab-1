@@ -14,6 +14,7 @@ namespace Cloud_Azure_Lab_3_part_1
         {
             AzureClanDB = _AzureClanDB;
         }
+        //GET http://localhost:7099/api/AzureClanAPI 
         [Function("GetAllAzureMembers")]
         public HttpResponseData GetAllAzureMembers([HttpTrigger(AuthorizationLevel.Function, "get", Route = "AzureClanAPI")] HttpRequestData req)
         {
@@ -22,7 +23,7 @@ namespace Cloud_Azure_Lab_3_part_1
             response.WriteAsJsonAsync(AzureMembers);
             return response;
         }
-        
+        //GET http://localhost:7099/api/AzureClanAPI/{Id} (Insert a AzureMember Id) 
         [Function("GetAzureMemberById")]
         public HttpResponseData GetAzureMemberById
         ([HttpTrigger(AuthorizationLevel.Function, "get", Route = "AzureClanAPI/{Id}")] HttpRequestData req, string Id)
@@ -39,7 +40,7 @@ namespace Cloud_Azure_Lab_3_part_1
             response.StatusCode = HttpStatusCode.OK;
             return response;
         }
-
+        //POST http://localhost:7099/api/AzureClanAPI/ (Insert a Json in the request body with the properties from CreateAzureMember class)
         [Function("AddAzureMember")]
         public HttpResponseData AddAzureMember([HttpTrigger(AuthorizationLevel.Function, "post", Route = "AzureClanAPI")] HttpRequestData req)
         {
@@ -61,7 +62,7 @@ namespace Cloud_Azure_Lab_3_part_1
             response.StatusCode = HttpStatusCode.Created;
             return response;
         }
-
+        //PUT http://localhost:7099/api/AzureClanAPI/{Id} (Insert Id and a Json in the request body with the properties from CreateAzureMember class)
         [Function("UpdateAzureMember")]
         public HttpResponseData UpdateAzureMember([HttpTrigger(AuthorizationLevel.Function, "put", Route = "AzureClanAPI/{Id}")] HttpRequestData req, string Id)
         {
@@ -89,7 +90,7 @@ namespace Cloud_Azure_Lab_3_part_1
             
             return response;
         }
-
+        //DELETE http://localhost:7099/api/AzureClanAPI/{Id} (Insert and Id)
         [Function("Delet a AzureMember")]
         public HttpResponseData DeletAzureMember(
          [HttpTrigger(AuthorizationLevel.Function, "delete", Route = "AzureClanAPI/{Id}") ] HttpRequestData req, string Id
